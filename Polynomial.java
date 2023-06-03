@@ -2,7 +2,7 @@ public class Polynomial {
     double[] coefficients;
 
     public Polynomial() {
-        coefficients = new double[1];
+        coefficients = new double[0];
         coefficients[0] = 0;
     }
 
@@ -18,22 +18,23 @@ public class Polynomial {
         Polynomial largePoly;
 
         if (polynomial.coefficients.length < this.coefficients.length) {
-            //lengthOfSmallest = polynomial.coefficients.length;
             smallPoly = polynomial;
             largePoly = this;
-            // //lengthOfLargest = this.coefficients.length;
-            // double[] newCoefficients = new double[lengthOfLargest];
         } else {
-            //lengthOfSmallest = this.coefficients.length;
-            //lengthOfLargest = polynomial.coefficients.length;
             smallPoly = this;
             largePoly = polynomial;
         }
 
-        //double[] newCoefficients = new double[lengthOfLargest];
+        Polynomial newPoly = new Polynomial;
+        int[] newCoeff = new int[largePoly.coefficients.length]
 
-        Polynomial newPolynomial = new Polynomial(coefficients);
-
-        return polynomial;
+        for (int i = 0; i < smallPoly.coefficients.length; i++) {
+            newCoeff[i] = smallPoly.coefficients[i] + largePoly.coefficients[i]
+        } 
+        for (int i = smallPoly.coefficients.length; i < largePoly.coefficients.length; i++) {
+            newCoeff[i] = newPoly.coefficients[i]
+        } 
+ 
+        return new Polynomial(newCoeff);
     }
 }
